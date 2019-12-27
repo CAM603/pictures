@@ -2,8 +2,21 @@ import React from 'react';
 import { render } from '@testing-library/react';
 
 class SearchBar extends React.Component {
+    onInputChange(event) {
+        console.log(event.target.value)
+    }
+
     render() {
-        return <div>SearchBar</div>
+        return (
+            <div className="ui segment">
+                <form className="ui form">
+                    <div className="field">
+                        <label>Search</label>
+                        <input type="text" onChange={this.onInputChange}/>
+                    </div>
+                </form>
+            </div>
+        )
     }
 }
 
